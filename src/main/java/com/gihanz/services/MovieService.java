@@ -66,4 +66,14 @@ public class MovieService {
         }
     }
 
+    public Movie findMovieByIdAndRating(String id, String rating){
+
+        try {
+            return movieRepository.findMovieByIdAndRating(id,rating);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

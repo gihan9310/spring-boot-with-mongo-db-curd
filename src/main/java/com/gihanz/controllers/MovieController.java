@@ -36,4 +36,9 @@ public class MovieController {
     public Movie findById(@PathVariable("id") String id){
         return movieService.findMovieById(id);
     }
+
+    @GetMapping(value = "/findById/{id}/{rating}")
+    public Movie findByIdAndRating(@PathVariable("id") String id,@PathVariable("rating") String rating){
+        return movieService.findMovieByIdAndRating(id,rating);
+    }
 }
