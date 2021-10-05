@@ -1,6 +1,5 @@
 package com.gihanz.controllers;
 
-import com.gihanz.documents.Movie;
 import com.gihanz.documents.Order;
 import com.gihanz.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

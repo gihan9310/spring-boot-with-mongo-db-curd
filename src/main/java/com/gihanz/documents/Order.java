@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -19,9 +20,12 @@ public class Order {
 
     @Id
     private String id;
+    @Indexed(unique = true)
     private String orderNo;
     private LocalDate orderDate;
     private String customerId;
+    private Float totalDiscountPer;
+    private Double totalDiscount;
     private List<OrderDetail>details;
 
 }

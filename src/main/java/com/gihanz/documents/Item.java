@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -12,18 +13,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @ToString
 @Document
-public class OrderDetail {
+public class Item {
 
     @Id
     private String id;
-    private Double price;
-    private Long qty;
-    private float lineDiscountPer;
-    private Double lineDiscount;
-    private Double lineValue;
-//    Relation code
+    @Indexed(unique = true)
     private String itemCode;
-
+    private String itemName;
+    private Double aviableQty;
 
 
 }
